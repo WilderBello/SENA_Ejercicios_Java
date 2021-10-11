@@ -21,36 +21,52 @@ public class JavaProject {
      * Añadido while
      */
     public static void main(String[] args) throws IOException {
-
+        // Salida para el programador
         System.out.println("Menú");
-        
+        //Inicialización de variable ejercicio
         int  ejercicio = 1;
+        //Selección del menú
         while (ejercicio != 0){
-
-            ejercicio = Integer.parseInt(JOptionPane.showInputDialog("Ingrese el número de enunciado (1-9). Con cero (0) termina."));
-            if (ejercicio == 0){
-                JOptionPane.showMessageDialog(null, "Finalizando...");
-            } else if (ejercicio == 1) {
-                Ejercicio1();
-            } else if (ejercicio == 2){
-                Ejercicio2();
-            } else if (ejercicio == 3){
-                Ejercicio3();
-            } else if (ejercicio == 4){
-                Ejercicio4();
-            } else if (ejercicio == 5){
-                Ejercicio5();
-            } else if (ejercicio == 6){
-                Ejercicio6();
-            } else if (ejercicio == 7){
-                Ejercicio7();
-            } else if (ejercicio == 8){
-                Ejercicio8();
-            } else if (ejercicio == 9){
-                Ejercicio9();
-            } else {
+            try {
+                ejercicio = Integer.parseInt(JOptionPane.showInputDialog(
+                    "Seleccione el enunciado al que desea acceder: \n"
+                            + 1 + ". Intereses de un banco \n"
+                            + 2 + ". Frutería: Manzanas \n" 
+                            + 3 + ". Función Y=x^2-2x \n" 
+                            + 4 + ". Suma de dígitos \n" 
+                            + 5 + ". Salario Neto a recibir \n" 
+                            + 6 + ". 20 términos de una serie \n" 
+                            + 7 + ". Datos de una fiesta \n" 
+                            + 8 + ". Costo de llamada \n" 
+                            + 9 + ". Examen de física \n"
+                            + "  ~Con cero (0) termina.~   "));
+                if (ejercicio == 0){
+                    JOptionPane.showMessageDialog(null, "Finalizando...");
+                } else if (ejercicio == 1) {
+                    Ejercicio1();
+                } else if (ejercicio == 2){
+                    Ejercicio2();
+                } else if (ejercicio == 3){
+                    Ejercicio3();
+                } else if (ejercicio == 4){
+                    Ejercicio4();
+                } else if (ejercicio == 5){
+                    Ejercicio5();
+                } else if (ejercicio == 6){
+                    Ejercicio6();
+                } else if (ejercicio == 7){
+                    Ejercicio7();
+                } else if (ejercicio == 8){
+                    Ejercicio8();
+                } else if (ejercicio == 9){
+                    Ejercicio9();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Opción fuera de rango...");
+                }
+            } catch (Exception e){
                 JOptionPane.showMessageDialog(null, "Opción fuera de rango...");
             }
+            
         }
     }
 
