@@ -54,7 +54,7 @@ public class JavaProject {
         }
     }
 
-    public static void Ejercicio1() throws IOException{
+    public static void Ejercicio1(){
         System.out.println("Ejemplo 1");
         
         float dinero; // Real = float
@@ -72,7 +72,7 @@ public class JavaProject {
         JOptionPane.showMessageDialog(null,"Valor futuro en 5 años: $" + ValorFuturo);
        
     }
-    public static void Ejercicio2() throws IOException{
+    public static void Ejercicio2(){
         System.out.println("Ejemplo 2"); // escriba
         float precio_kilo = (float) 4200;
         // float kilo;
@@ -99,7 +99,7 @@ public class JavaProject {
                         + ", pero tiene un descuento por valor de $" + ValorCon
                         + ", por lo tanto el valor a pagar es: $" + ValorTotal);
     }
-    public static void Ejercicio3() throws IOException{
+    public static void Ejercicio3(){
         System.out.println("Ejemplo 3");
         int y;
         int suma_y = 0;
@@ -122,18 +122,19 @@ public class JavaProject {
             }
         }
         
-        JOptionPane.showMessageDialog(null,"La suma de los valores de Y es: " + suma_y);
-        JOptionPane.showMessageDialog(null,"Los valores de Y m�ltiplos de 3: " + multiplos_3);
-        JOptionPane.showMessageDialog(null,"Suma de los valores de Y m�ltiplos de 3: " + suma_3);
-        JOptionPane.showMessageDialog(null,"Valores de Y cuyo �ltimo d�gito sea 5: " + multiplos_5);
-        JOptionPane.showMessageDialog(null,"Suma de los valores de Y cuyo �ltimo d�gito es 5: " + suma_5);
+        JOptionPane.showMessageDialog(null,
+                "La suma de los valores de Y es: " + suma_y + 
+                        "\nLos valores de Y múltiplos de 3: " + multiplos_3 + 
+                        "\nSuma de los valores de Y múltiplos de 3: " + suma_3 + 
+                        "\nValores de Y cuyo �ltimo d�gito sea 5: " + multiplos_5 + 
+                        "\nSuma de los valores de Y cuyo �ltimo d�gito es 5: " + suma_5);
         
     }
 
-    public static void Ejercicio4() throws IOException{
+    public static void Ejercicio4(){
         System.out.println("Ejemplo 4");
     	int numero;
-    	numero = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un n�mero: "));
+    	numero = Integer.parseInt(JOptionPane.showInputDialog("Ingrese un número: "));
     	String cad_numero = String.valueOf(numero);
     	int a = cad_numero.length();
     	int suma = 0;
@@ -143,11 +144,12 @@ public class JavaProject {
         	numero = numero1;
            	a--;
         }
-        JOptionPane.showMessageDialog(null,"El n�mero ingresado es: " + cad_numero);
-        JOptionPane.showMessageDialog(null,"La suma de sus digitos es: " + suma);
+        JOptionPane.showMessageDialog(null,
+                "El número ingresado es: " + cad_numero 
+                        + "\nLa suma de sus digitos es: " + suma);
     }
 
-    public static void Ejercicio5() throws NumberFormatException, IOException{
+    public static void Ejercicio5(){
         
         System.out.println("Ejemplo 5");
 		
@@ -187,9 +189,16 @@ public class JavaProject {
 		float SalarioNeto = TotalDevengado - TotalDeducciones;
         
         // ------------- salidas --------------------
-        JOptionPane.showMessageDialog(null, "Cedula empleado: " + cedula + "\nNombre Empleado: " + nombre + "\nSalario Básico: " + SalarioBasico + "\nAuxilio de Transporte: " + AuxTransporte + "\nComisión de Ventas: " + comision + "\nPréstamos: " + prestamos + "\nSalario Neto a Recibir: " + SalarioNeto);
+        JOptionPane.showMessageDialog(null, 
+                "Cedula empleado: " + cedula 
+                        + "\nNombre Empleado: " + nombre 
+                        + "\nSalario Básico: " + SalarioBasico 
+                        + "\nAuxilio de Transporte: " + AuxTransporte 
+                        + "\nComisión de Ventas: " + comision 
+                        + "\nPréstamos: " + prestamos 
+                        + "\nSalario Neto a Recibir: " + SalarioNeto);
     }
-    public static void Ejercicio6() throws IOException{
+    public static void Ejercicio6(){
         System.out.println("Ejemplo 6");
 		int N = 0;
 		List<Integer> terminos = new ArrayList<>();
@@ -198,9 +207,9 @@ public class JavaProject {
         	terminos.add(N);
         }
 
-        JOptionPane.showMessageDialog(null,"Términos de la serie: " + terminos);
+        JOptionPane.showMessageDialog(null,"Términos de la serie: \n" + terminos);
     }
-    public static void Ejercicio7() throws IOException{
+    public static void Ejercicio7(){
         System.out.println("Ejemplo 7");
 		int edad = 1;
 		int m = 0;
@@ -215,7 +224,7 @@ public class JavaProject {
 		float prom_no = 0;
 		
 		while(edad > 0) {
-                    edad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su edad: "));
+                    edad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su edad (0 = Terminar): "));
             
                     if (edad >= 18) {
 
@@ -260,11 +269,22 @@ public class JavaProject {
 		}else {
 			prom_no = edad_no / no_def;
 		}
-
-        JOptionPane.showMessageDialog(null, "Total de personas que asistieron: " + Total + "\nTotal de hombres que asistieron: " + m + "\nTotal de mujeres que asistieron: " + f + "\nTotal de personas sin sexo identificado que asistieron: " + no_def + "\nPromedio de edad de hombres que asistieron: " + prom_m + "\nPromedio de edad de mujeres que asistieron: " + prom_f + "\nPromedio de edad de sexo no definido que asistieron: " + prom_no + "\nEdad de la persona más joven que asistió: " + menor_edad);
-   
+        if (menor_edad == 0){
+            JOptionPane.showMessageDialog(null, "Nadie asistió.");
+        } else {
+            JOptionPane.showMessageDialog(null, 
+                    "Total de personas que asistieron: " + Total
+                            + "\nTotal de hombres que asistieron: " + m 
+                            + "\nTotal de mujeres que asistieron: " + f 
+                            + "\nTotal de personas sin sexo identificado que asistieron: " + no_def 
+                            + "\nPromedio de edad de hombres que asistieron: " + prom_m 
+                            + "\nPromedio de edad de mujeres que asistieron: " + prom_f 
+                            + "\nPromedio de edad de sexo no definido que asistieron: " + prom_no 
+                            + "\nEdad de la persona más joven que asistió: " + menor_edad);
+        }
+        
     }
-    public static void Ejercicio8() throws IOException{
+    public static void Ejercicio8(){
         System.out.println("Ejemplo 8");
 		int duracion;
 		int costo = 200;
@@ -272,15 +292,19 @@ public class JavaProject {
 		duracion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la duraci�n de la llamada en minutos: "));
 		
 		if (duracion <= 3) {
-			JOptionPane.showMessageDialog(null,"La llamada con duraci�n de "+ duracion + " minuto(s) tiene un costo de: $" + costo);
+			JOptionPane.showMessageDialog(null,
+                    "La llamada con duraci�n de "+ duracion 
+                            + " minuto(s) \ntiene un costo de: $" + costo);
 		} else {
 			int adicional = duracion - 3; 
 			int costo_adicional = adicional * costo_min_adicional;
 			int costo_total = costo + costo_adicional;
-			JOptionPane.showMessageDialog(null,"La llamada con duraci�n de "+ duracion + " minutos tiene un costo de: $" + costo_total);
+			JOptionPane.showMessageDialog(null,
+                    "La llamada con duraci�n de "+ duracion 
+                            + " minutos \ntiene un costo de: $" + costo_total);
 		}
     }
-    public static void Ejercicio9() throws IOException{
+    public static void Ejercicio9(){
         System.out.println("Ejemplo 9");
 		
 		int cal50 = 0;
@@ -289,7 +313,8 @@ public class JavaProject {
 		int cal100 = 0;
 		
 		for (int estudiante = 1; estudiante <= 10; estudiante++ ) {
-			float calificacion = Float.parseFloat(JOptionPane.showInputDialog("Ingrese la calificaci�n del estudiante " + estudiante + ": "));
+			float calificacion = Float.parseFloat(JOptionPane.showInputDialog("Ingrese la calificaci�n del estudiante " 
+                                                                                + estudiante + ": "));
 			
 			if (calificacion > 0 && calificacion < 50) {
 				cal50 += 1;
@@ -304,7 +329,11 @@ public class JavaProject {
 				estudiante -= 1;
 			}
 		}
-		JOptionPane.showMessageDialog(null,"Estudiantes con calificaci�n menor a 50: " + cal50 + ". Estudiantes con calificaci�n entre 50 y menor a 70: " + cal70 + ". Estudiantes con calificaci�n entre 70 y menor que 80: " + cal80 + ". Estudiantes con calificaci�n entre 80 y 100: " + cal100);
+		JOptionPane.showMessageDialog(null,
+                "Estudiantes con calificaci�n menor a 50: " + cal50 
+                        + ". \nEstudiantes con calificaci�n entre 50 y menor a 70: " + cal70 
+                        + ". \nEstudiantes con calificaci�n entre 70 y menor que 80: " + cal80 
+                        + ". \nEstudiantes con calificaci�n entre 80 y 100: " + cal100);
     }
 }
 
