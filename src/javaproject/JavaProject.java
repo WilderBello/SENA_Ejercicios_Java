@@ -17,9 +17,8 @@ import java.io.IOException;
  */
 public class JavaProject {
 
-    /**
-     * @param args the command line arguments
-     * @throws IOException
+    /*
+     * Añadido while
      */
     public static void main(String[] args) throws IOException {
 
