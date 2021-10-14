@@ -4,11 +4,10 @@
  */
 package javaproject;
 
-import javax.swing.JOptionPane;
-
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.io.IOException;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -235,9 +234,9 @@ public class JavaProject {
 		int edad_f = 0;
 		int edad_no = 0;
 		int menor_edad = 0;
-		float prom_m = 0;
-		float prom_f = 0;
-		float prom_no = 0;
+		float prom_m;
+		float prom_f;
+		float prom_no;
 		
 		while(edad > 0) {
                     edad = Integer.parseInt(JOptionPane.showInputDialog("Ingrese su edad (0 = Terminar): "));
